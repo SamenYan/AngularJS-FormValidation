@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单验证</title>
+	<link rel="stylesheet" href="framework/bootstrap-3.0.0/css/bootstrap.min.css">
+	<style type="text/css">
+		form{
+			width: 200px;
+			margin: 20px auto;
+		}
+		input.error{
+			border: 1px solid red;
+		}
+		p.error{
+			color: red;
+		}
+	</style>
+</head>
+<body ng-app="myApp" ng-controller="signUpFormCtrl">
+	<form action="" name="signUpForm" ng-submit="submitForm()">
+		<div class="form-group">
+			<label for="">用户名</label>
+			<input  type="text" 
+					class="form-control" 
+					name="username" 
+					ng-model="userdata.username" 
+					ng-minlength="4" 
+					ng-maxlength="20" 
+					ng-class="{'error':signUpForm.username.$invalid}" >
+			<p class="error" ng-if="signUpForm.username.$invalid">
+				请输入4~20个字符之间
+			</p>
+			<p class="error" ng-if="signUpForm.username.required
+				">
+				不能为空
+			</p>
+		</div>
+		<div class="form-group">
+			<label for="">密码</label>
+			<input  type="password" 
+					class="form-control" 
+				 	ng-model="userdata.password">
+		</div><div class="form-group">
+			<label for="">确认密码</label>
+			<input  type="password" 
+					class="form-control" 
+				 	ng-model="userdata.password_confirm">
+		</div>
+		<button class="btn btn-primary">提交</button>	
+	</form>
+
+    <script src="framework/jquery-1.9.1.js"></script>
+    <script src="framework/angular-1.3.0.14/angular.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
