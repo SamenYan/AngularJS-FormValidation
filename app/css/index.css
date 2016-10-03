@@ -1,0 +1,7 @@
+form{width:400px;margin:20px auto;}
+div{position:relative;}
+div > i{position:absolute;top:35px;right:10px;}
+div > input.error{border:1px solid red;}
+div > p.error{color:red;}
+div > i.success{color:green;}
+div > i.fail{color:red;}

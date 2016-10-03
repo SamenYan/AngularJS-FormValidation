@@ -1,0 +1,31 @@
+{
+  "name": "testgruntjs",
+  "version": "1.0.0",
+  "description": "learn grunt",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "init": "^0.1.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-imagemin": "^0.3.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "jpegtran-bin": "^3.1.0",
+    "load-grunt-tasks": "^3.5.2",
+    "time-grunt": "^1.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "grunt",
+    "test"
+  ],
+  "author": "samen",
+  "license": "ISC"
+}
