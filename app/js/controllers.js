@@ -1,9 +1,7 @@
 'use strict';
+var myApp;
 
-var angular;
-var myModule = angular.module('myApp', []);
-
-myModule.controller('signUpFormCtrl', ['$scope', function($scope){
+myApp.controller('signUpFormCtrl', ['$scope', function($scope){
 	$scope.userdata = {};
 
 	$scope.submitForm = function(){
