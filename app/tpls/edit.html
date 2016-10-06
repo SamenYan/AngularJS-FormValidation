@@ -1,49 +1,61 @@
-<form action="" name="signUpForm" ng-submit="submitForm()" ng-controller="signUpFormCtrl">
-	<div class="form-group">
-		<label for="">username</label>
-		<input  class="form-control" 
-				type="text" 
-				name="username" 
-				required
-				ng-model="userdata.username" 
-				ng-minlength="6" 
-				ng-maxlength="20"
-				ng-pattern="/[a-zA-Z0-9]/" 
-			>
-		<p class="error" ng-if="
-					signUpForm.username.$error.required&& 
-					signUpForm.username.$touched">
-			不能为空
-		</p>
-		<p class="error" ng-if="signUpForm.username.$error.pattern">
-			请输入6~20个字母，不分大小写
-		</p>
-		<i class="fa fa-check success" ng-if="signUpForm.username.$valid"></i>
-		<i class="fa fa-remove fail" ng-if=" 
-					signUpForm.username.$touched&&signUpForm.username.$invalid"></i>
+<div ng-controller="myCtrl">
+	<div class="col-lg-6">
+		<h3 class="editor-tit">效果</h3>
+		<form action="" name="signUpForm" ng-submit="submitForm()">
+			<div class="form-group" ng-show="bu">
+				<panelun></panelun>
+				<panelnotempty></panelnotempty>
+			</div>
+			<div class="form-group" ng-show="bs">
+				<panelbtn></panelbtn>
+			</div>
+
+			<div class="form-group">
+				<label  for="">password</label>
+				<input  type="password" 
+						name="password"
+						class="form-control" 
+						required 
+					 	ng-model="userdata.password">
+			</div>
+			<div class="form-group">
+				<label for="">confirm password</label>
+				<input  type="password"
+						name="confirm_password" 
+						class="form-control" 
+						required 
+					 	ng-model="userdata.confirm_password">
+			</div>
+			<div class="form-group">
+				<label for="">email</label>
+				<input  type="email" 
+						name="email" 
+						class="form-control" 
+					 	ng-model="userdata.email">
+			</div>
+			<button class="btn btn-primary" ng-disabled="signUpForm.username.$invalid">提交</button>	
+		</form>
 	</div>
-	<div class="form-group">
-		<label  for="">password</label>
-		<input  type="password" 
-				name="password"
-				class="form-control" 
-				required 
-			 	ng-model="userdata.password">
+	<div class="col-lg-6 config">
+		<h3 class="editor-tit">配置</h3>
+		<ul class="list-group">
+			<li class="list-group-item">
+				<input type="checkbox" name="username" ng-click="getbu()" ng-checked="bu">
+				<label for="username">username</label>
+			</li>
+			<li class="list-group-item">
+				<input type="checkbox" name="password" ng-click="getbp()" ng-checked="bp">
+				<label for="password">password</label>
+			</li>
+			<li class="list-group-item">
+				<input type="checkbox" name="confirm password" ng-click="getbcp()" ng-checked="bcp">
+				<label for="password">confirm password</label>
+			</li>
+			<li class="list-group-item" >
+				<input type="checkbox" name="submit" ng-click="getbs()" ng-checked="bs">
+				<label for="password">submit</label>
+			</li>
+		</ul>
 	</div>
-	<div class="form-group">
-		<label for="">confirm password</label>
-		<input  type="password"
-				name="confirm_password" 
-				class="form-control" 
-				required 
-			 	ng-model="userdata.confirm_password">
-	</div>
-	<div class="form-group">
-		<label for="">email</label>
-		<input  type="email" 
-				name="email" 
-				class="form-control" 
-			 	ng-model="userdata.email">
-	</div>
-	<button class="btn btn-primary" ng-disabled="signUpForm.username.$invalid">提交</button>	
-</form>
+</div>
+

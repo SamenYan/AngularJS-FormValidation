@@ -1,7 +1,32 @@
-<div>
-    <a href="" ui-sref=".docs">docs</a>
-    <a href="" ui-sref=".edit">edit</a>
+<div class="navbar">
+    <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="./">Form Editor</a>
+    </div>
+    <!-- /container -->
 </div>
-<div>
-    <div ui-view=""></div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <ul class="left-nav">
+                <li ui-sref=".docs">
+                    <a href="">
+                        <i class="icon-home"></i>docs
+                    </a>
+                </li>
+                <li  ui-sref=".edit">
+                    <a href="">
+                        <i class="icon-th-list"></i>edit
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-9">
+            <div ui-view=""></div>
+        </div>
+    </div>
 </div>
