@@ -5,18 +5,18 @@ var myApp = angular.module('myApp', ['ui.router']);
 
 myApp.config(function ($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.when("", "/PageTab");
+    $urlRouterProvider.when("", "/pageTab");
 
     $stateProvider
-        .state("PageTab", {
-            url: "/PageTab",
+        .state("pageTab", {
+            url: "/pageTab",
             templateUrl: "tpls/PageTab.html"
         })
-        .state("PageTab.docs", {
+        .state("pageTab.docs", {
             url:"/docs",
             templateUrl: "tpls/docs.html"
         })
-        .state("PageTab.edit", {
+        .state("pageTab.edit", {
             url:"/edit",
             templateUrl: "tpls/edit.html"
         });
