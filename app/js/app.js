@@ -17,7 +17,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "tpls/docs.html"
         })
         .state("pageTab.edit", {
-            url:"/edit",
-            templateUrl: "tpls/edit.html"
+            url:"/editor",
+            templateUrl: "tpls/editor.html"
         });
 });

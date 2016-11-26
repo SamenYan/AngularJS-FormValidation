@@ -36,8 +36,8 @@ myApp.directive('panelnotempty', function() {
         restrict: 'E',
         transclude: true,
         template: '<label for="">username</label>' +
-            '<input class="form-control" type="text" name="username" ng-minlength="6" ng-maxlength="20" ><p class="error" '+
-    		'ng-if="signUpForm.username.$error.required&&signUpForm.username.$touched">不能为空</p>'
+            '<input class="form-control" type="text" name="username" ng-minlength="6" ng-maxlength="20" >'+
+            '<p class="error" ng-if="signUpForm.username.$error.required&&signUpForm.username.$touched">不能为空</p>'
     };
 }).directive('panelbtn', function() {
     //submit btn
