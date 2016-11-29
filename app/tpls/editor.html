@@ -2,29 +2,12 @@
 	<div class="col-lg-6">
 		<h3 class="editor-tit">Preview</h3>
 		<form action="" name="signUpForm" ng-submit="submitForm()">
-			<div class="form-group" ng-show="bu">
+			<div class="form-group" ng-show="boolUsername">
 				<panelun></panelun>
 				<panelnotempty></panelnotempty>
 			</div>
-			<div class="form-group" ng-show="bs">
-				<panelbtn></panelbtn>
-			</div>
-
-			<div class="form-group">
-				<label  for="">password</label>
-				<input  type="password" 
-						name="password"
-						class="form-control" 
-						required 
-					 	ng-model="userdata.password">
-			</div>
-			<div class="form-group">
-				<label for="">confirm password</label>
-				<input  type="password"
-						name="confirm_password" 
-						class="form-control" 
-						required 
-					 	ng-model="userdata.confirm_password">
+			<div class="form-group" ng-show="boolPassword">
+				<panelbpwd></panelbpwd>
 			</div>
 			<div class="form-group">
 				<label for="">email</label>
@@ -33,27 +16,76 @@
 						class="form-control" 
 					 	ng-model="userdata.email">
 			</div>
-			<button class="btn btn-primary" ng-disabled="signUpForm.username.$invalid">提交</button>	
+			<div class="form-group" ng-show="boolSubmit">
+				<panelbtn></panelbtn>
+			</div>
 		</form>
 	</div>
 	<div class="col-lg-6 config">
 		<h3 class="editor-tit">Configuration</h3>
 		<ul class="list-group">
-			<li class="list-group-item">
-				<input type="checkbox" name="username" ng-click="getbu()" ng-checked="bu">
-				<label for="username">username</label>
+			<li class="" title="username">
+				<div class="panel panel-default">
+					<!-- Default panel contents -->
+					<div class="panel-heading">
+						<input type="checkbox" name="username" ng-click="getBoolUsername()" ng-checked="boolUsername">
+						<label for="username">username</label>
+					</div>
+					<ul class="list-group" ng-show="boolUsername">
+						<li class="list-group-item">
+							<input type="checkbox" name="username_isnull" ng-click="getUsernameIsRequired()"></input>
+							<label for="">不能为空</label>
+						</li>
+						<li class="list-group-item">
+							<label for="">最小长度</label>
+							<input type="text" class="form-control" name="username_minlen" placeholder="6"></input>
+						</li>
+						<li class="list-group-item">
+							<label for="">最大长度</label>
+							<input type="text" class="form-control" name="username_maxlen" placeholder="20"></input>
+						</li>
+						<li class="list-group-item">
+							<label for="">匹配规则</label>
+							<input type="text" class="form-control" name="username_pattern" placeholder="例如：/[a-zA-Z0-9]/"></input>
+						</li>
+					</ul>
+				</div>
 			</li>
-			<li class="list-group-item">
-				<input type="checkbox" name="password" ng-click="getbp()" ng-checked="bp">
-				<label for="password">password</label>
+			<li class="" title="password">
+				<div class="panel panel-default">
+					<!-- Default panel contents -->
+					<div class="panel-heading">
+						<input type="checkbox" name="password" ng-click="getBoolPassword()" ng-checked="boolPassword">
+						<label for="password">password</label>
+					</div>
+					<ul class="list-group" ng-show="boolPassword">
+						<li class="list-group-item">
+							<input type="checkbox" name="username_isnull"></input>
+							<label for="">不能为空</label>
+						</li>
+						<li class="list-group-item">
+							<label for="">最小长度</label>
+							<input type="text" class="form-control" name="username_minlen" placeholder="6"></input>
+						</li>
+						<li class="list-group-item">
+							<label for="">最大长度</label>
+							<input type="text" class="form-control" name="username_maxlen" placeholder="20"></input>
+						</li>
+						<li class="list-group-item">
+							<label for="">匹配规则</label>
+							<input type="text" class="form-control" name="username_pattern" placeholder="例如：/[a-zA-Z0-9]/"></input>
+						</li>
+					</ul>
+				</div>
 			</li>
-			<li class="list-group-item">
-				<input type="checkbox" name="confirm password" ng-click="getbcp()" ng-checked="bcp">
-				<label for="password">confirm password</label>
-			</li>
-			<li class="list-group-item" >
-				<input type="checkbox" name="submit" ng-click="getbs()" ng-checked="bs">
-				<label for="password">submit</label>
+			<li class="" title="submit">
+				<div class="panel panel-default">
+					<!-- Default panel contents -->
+					<div class="panel-heading">
+						<input type="checkbox" name="submit" ng-click="getBoolSubmit()" ng-checked="boolSubmit">
+						<label for="password">submit</label>
+					</div>
+				</div>
 			</li>
 		</ul>
 	</div>
